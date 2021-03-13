@@ -40,6 +40,7 @@ void MainWindow::on_serialPortReadyRead()
     }
     else if(message.contains("CONVEYERS GONE"))
     {
+        ui->label->setPixmap(QPixmap(":/new/prefix1/Resources/standing_conveyers.png"));
         ui->indicatorButton->setStyleSheet("background-color: red;"
                                            "border-style: outset;"
                                            "border-width: 1px;"
@@ -48,6 +49,23 @@ void MainWindow::on_serialPortReadyRead()
         ui->stopButton->setDisabled(true);
         ui->accidentButton->setDisabled(true);
         ui->startButton->setEnabled(true);
+    }
+
+    if (message.contains("CONVEYER0 STARTED"))
+    {
+        ui->label->setPixmap(QPixmap());
+        ui->label->setMovie(oneConveyer);
+        oneConveyer->start();
+    }
+    else if (message.contains("CONVEYER1 STARTED"))
+    {
+        ui->label->setMovie(twoConveyers);
+        twoConveyers->start();
+    }
+    else if (message.contains("CONVEYER2 STARTED"))
+    {
+        ui->label->setMovie(threeConveyers);
+        threeConveyers->start();
     }
 
     if(message.contains("ACCIDENT STARTED"))

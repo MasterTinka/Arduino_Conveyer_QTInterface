@@ -1,5 +1,9 @@
 <RCC>
     <qresource prefix="/new/prefix1">
         <file>Resources/reload.png</file>
+        <file>Resources/three-conveyers.gif</file>
+        <file>Resources/one-coveyer.gif</file>
+        <file>Resources/standing_conveyers.png</file>
+        <file>Resources/two-conveyers.gif</file>
     </qresource>
 </RCC>

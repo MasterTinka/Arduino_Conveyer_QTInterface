@@ -6,6 +6,7 @@
 #include <QSerialPortInfo>
 #include <QtDebug>
 #include <QTimer>
+#include <QMovie>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -40,5 +41,10 @@ class MainWindow : public QMainWindow
         QSerialPort serialPort;
 
         QList<QSerialPortInfo> serialPorts;
+
+        QMovie *oneConveyer = new QMovie(":/new/prefix1/Resources/one-coveyer.gif");
+        QMovie *twoConveyers = new QMovie(":/new/prefix1/Resources/two-conveyers.gif");
+        QMovie *threeConveyers = new QMovie(":/new/prefix1/Resources/three-conveyers.gif");
+
 };
 #endif // MAINWINDOW_H

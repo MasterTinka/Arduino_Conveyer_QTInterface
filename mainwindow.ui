@@ -73,22 +73,31 @@
            </widget>
           </item>
           <item>
+           <spacer name="horizontalSpacer_4">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
            <widget class="QPushButton" name="accidentButton">
             <property name="enabled">
-             <bool>false</bool>
+             <bool>true</bool>
+            </property>
+            <property name="styleSheet">
+             <string notr="true"/>
             </property>
             <property name="text">
              <string>Авария</string>
             </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="cancelAccidentButton">
-            <property name="enabled">
+            <property name="flat">
              <bool>false</bool>
-            </property>
-            <property name="text">
-             <string>Сброс аварии</string>
             </property>
            </widget>
           </item>
@@ -110,6 +119,9 @@
           </item>
           <item>
            <widget class="QPushButton" name="indicatorButton">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
             <property name="styleSheet">
              <string notr="true">	background-color: red;
     border-style: outset;

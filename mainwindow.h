@@ -29,11 +29,8 @@ class MainWindow : public QMainWindow
 
         void on_stopButton_clicked();
 
-        void on_accidentButton_clicked();
-
         void on_serialPortReadyRead();
 
-        void on_cancelAccidentButton_clicked();
 
     private:
         Ui::MainWindow *ui;

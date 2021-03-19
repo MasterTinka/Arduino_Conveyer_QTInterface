@@ -36,6 +36,7 @@ void MainWindow::on_serialPortReadyRead()
                                            "padding: 6px;");
         ui->startButton->setDisabled(true);
         ui->stopButton->setEnabled(true);
+        ui->accidentButton->setEnabled(true);
     }
     else if(message.contains("CONVEYERS GONE"))
     {
@@ -46,6 +47,7 @@ void MainWindow::on_serialPortReadyRead()
                                            "border-radius: 18px;"
                                            "padding: 6px;");
         ui->stopButton->setDisabled(true);
+        ui->accidentButton->setDisabled(true);
         ui->startButton->setEnabled(true);
     }
 
@@ -69,15 +71,14 @@ void MainWindow::on_serialPortReadyRead()
     if(message.contains("ACCIDENT STARTED"))
     {
         ui->stopButton->setDisabled(true);
+        ui->accidentButton->setDisabled(true);
         ui->startButton->setDisabled(true);
-
-        ui->accidentButton->setStyleSheet("background-color: rgb(255, 0 , 0"
-                                          ");");
+        ui->cancelAccidentButton->setEnabled(true);
     }
     else if(message.contains("ACCIDENT GONE"))
     {
         ui->startButton->setEnabled(true);
-        ui->accidentButton->setStyleSheet("");
+        ui->cancelAccidentButton->setDisabled(true);
     }
 }
 
@@ -110,4 +111,15 @@ void MainWindow::on_SerialList_currentIndexChanged(int index)
 void MainWindow::on_stopButton_clicked()
 {
     serialPort.write("STOP");
+}
+
+
+void MainWindow::on_accidentButton_clicked()
+{
+    serialPort.write("ACCIDENT");
+}
+
+void MainWindow::on_cancelAccidentButton_clicked()
+{
+    serialPort.write("STOP_ACCIDENT");
 }
